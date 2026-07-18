@@ -28,10 +28,10 @@
 
       document.getElementById('result').innerHTML = `
         <p>Ссылка: <a href="${json.link}">${json.link}</a></p>
-        <p>Команда для второго ПК (PowerShell):</p>
-        <code>Invoke-WebRequest -Uri ${json.link} -OutFile "${json.name}"</code>
-        <p>Команда для второго ПК (curl):</p>
-        <code>curl -L -o "${json.name}" ${json.link}</code>
+        <p>Команда для второго ПК (PowerShell) — скачает файл сразу на Рабочий стол:</p>
+        <code>cd $env:USERPROFILE\\Desktop; Invoke-WebRequest -Uri ${json.link} -OutFile "${json.name}"</code>
+        <p>Команда для второго ПК (curl) — тоже на Рабочий стол:</p>
+        <code>cd $env:USERPROFILE\\Desktop; curl.exe -L -o "${json.name}" ${json.link}</code>
       `;
     });
   </script>
